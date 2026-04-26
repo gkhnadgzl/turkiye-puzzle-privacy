@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TR Puzzle — Gizlilik Politikası</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1b2a;
+      color: #e0e8f0;
+      line-height: 1.7;
+      padding: 0 16px 60px;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 0 32px;
+      border-bottom: 1px solid #1f3448;
+      margin-bottom: 40px;
+    }
+
+    header .icon { font-size: 52px; margin-bottom: 12px; }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #f0f4f8;
+      margin-bottom: 6px;
+    }
+
+    header .subtitle {
+      font-size: 14px;
+      color: #7a9bb5;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      background: #162535;
+      border: 1px solid #1f3448;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 36px;
+      font-size: 14px;
+      color: #9db8cc;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #42A5F5;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1f3448;
+    }
+
+    .section-title .num {
+      background: #42A5F522;
+      border: 1px solid #42A5F555;
+      color: #42A5F5;
+      font-size: 12px;
+      font-weight: 900;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #b0c8dc;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: #b0c8dc;
+      padding: 4px 0 4px 18px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: #42A5F5;
+    }
+
+    .box {
+      background: #162535;
+      border: 1px solid #1f3448;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+
+    .box-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #f0f4f8;
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: #42A5F511;
+      border: 1px solid #42A5F533;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+
+    .highlight p {
+      color: #9db8cc;
+      margin: 0;
+    }
+
+    a {
+      color: #42A5F5;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      background: #42A5F522;
+      border: 1px solid #42A5F544;
+      color: #42A5F5;
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-right: 4px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid #1f3448;
+      font-size: 13px;
+      color: #4a6880;
+    }
+
+    footer a { color: #42A5F5; }
+
+    @media (prefers-color-scheme: light) {
+      body { background: #f0f4f8; color: #0d1b2a; }
+      header { border-bottom-color: #dde5ee; }
+      header h1 { color: #0d1b2a; }
+      header .subtitle { color: #4a6880; }
+      .intro { background: #fff; border-color: #dde5ee; color: #4a6880; }
+      .section-title { color: #1565C0; border-bottom-color: #dde5ee; }
+      .section-title .num { background: #1565C022; border-color: #1565C055; color: #1565C0; }
+      p, ul li { color: #4a6880; }
+      .box { background: #fff; border-color: #dde5ee; }
+      .box-title { color: #0d1b2a; }
+      .highlight { background: #E3F2FD; border-color: #BBDEFB; }
+      .highlight p { color: #4a6880; }
+      a { color: #1565C0; }
+      .badge { background: #1565C022; border-color: #1565C044; color: #1565C0; }
+      footer { border-top-color: #dde5ee; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="icon">🗺️</div>
+      <h1>TR Puzzle</h1>
+      <div class="subtitle">Gizlilik Politikası · Son güncelleme: Nisan 2025</div>
+    </header>
+
+    <div class="intro">
+      Bu politika, TR Puzzle mobil uygulamasının kişisel verilerinizi nasıl topladığını,
+      kullandığını ve koruduğunu açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.
+    </div>
+
+    <!-- 1 -->
+    <section>
+      <div class="section-title"><span class="num">1</span>Uygulama Hakkında</div>
+      <p>
+        TR Puzzle, Türkiye illerini bulmaca formatında öğreten eğitici bir mobil oyundur.
+        Android ve iOS platformlarında ücretsiz olarak sunulmaktadır.
+      </p>
+      <p>Geliştirici iletişim: <a href="mailto:support@turkiyepuzzle.app">support@turkiyepuzzle.app</a></p>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <div class="section-title"><span class="num">2</span>Toplanan Veriler</div>
+
+      <div class="box">
+        <div class="box-title">Hesap Oluşturulursa</div>
+        <ul>
+          <li>E-posta adresi (Google veya Apple hesabıyla giriş)</li>
+          <li>Görünen ad ve profil avatarı</li>
+          <li>Google / Apple hesap kimliği (UID)</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Oyun Verisi — Yerel Depolama</div>
+        <ul>
+          <li>Bölge ilerleme durumu, yıldız sayısı, başarımlar</li>
+          <li>Oyun ayarları (ses, tema tercihi)</li>
+          <li>Jeton ve puan bilgileri</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Online Arena — Firebase</div>
+        <ul>
+          <li>Kullanıcı adı ve ELO puanı</li>
+          <li>Maç geçmişi (kazanma/kaybetme sayısı)</li>
+          <li>Son aktif olma zamanı</li>
+        </ul>
+      </div>
+
+      <div class="highlight">
+        <p>🎭 <strong>Misafir modunda</strong> hiçbir kişisel veri toplanmaz. Tüm oyun verisi yalnızca cihazda saklanır.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <div class="section-title"><span class="num">3</span>Verilerin Kullanımı</div>
+      <ul>
+        <li>Oyun ilerlemesini cihaza kaydetmek</li>
+        <li>Online arena eşleşmesi ve sıralama tablosunu oluşturmak</li>
+        <li>Günlük turnuva ve lig sistemini yönetmek</li>
+        <li>Hesap silme taleplerini işlemek</li>
+      </ul>
+      <p>Veriler reklam, profil oluşturma veya pazarlama amacıyla kullanılmaz.</p>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <div class="section-title"><span class="num">4</span>Veri Paylaşımı</div>
+      <p>Kişisel verileriniz üçüncü taraflarla pazarlama amacıyla kesinlikle paylaşılmaz.</p>
+      <p>Teknik altyapı için aşağıdaki sağlayıcılar kullanılmaktadır:</p>
+
+      <div class="box">
+        <div class="box-title">Firebase / Google LLC</div>
+        <p>Kimlik doğrulama ve gerçek zamanlı veritabanı altyapısı.</p>
+        <p><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Apple Inc.</div>
+        <p>iOS kimlik doğrulama (Sign in with Apple).</p>
+        <p><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <div class="section-title"><span class="num">5</span>Veri Saklama Süresi</div>
+      <ul>
+        <li>Hesap verileri: hesap silinene kadar saklanır</li>
+        <li>Yerel oyun verileri: uygulama cihazdan kaldırılana kadar kalır</li>
+        <li>Silinen hesaplara ait Firebase verileri 30 gün içinde kalıcı olarak temizlenir</li>
+      </ul>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <div class="section-title"><span class="num">6</span>Veri Güvenliği</div>
+      <ul>
+        <li>Firebase güvenlik kuralları ile sunucu tarafı doğrulama</li>
+        <li>HTTPS / TLS şifreleme ile iletim güvenliği</li>
+        <li>Yerel veriler cihazın korumalı depolama alanında tutulur</li>
+        <li>Şifre uygulamada saklanmaz; kimlik doğrulama Google / Apple altyapısıyla yapılır</li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <div class="section-title"><span class="num">7</span>Çocukların Gizliliği</div>
+      <p>
+        <span class="badge">Minik Kaşif</span> modu 5–8 yaş grubuna yöneliktir. Bu mod:
+      </p>
+      <ul>
+        <li>Kişisel veri toplamaz</li>
+        <li>İnternet bağlantısı gerektirmez</li>
+        <li>Misafir modunda çalışır</li>
+      </ul>
+      <p>
+        13 yaş altı kullanıcıların ebeveyn gözetiminde uygulamayı kullanması önerilir.
+        13 yaş altına yönelik bilerek hesap kaydı alınmaz.
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <div class="section-title"><span class="num">8</span>Haklarınız</div>
+      <ul>
+        <li>Verilerinize erişim ve düzeltme hakkı</li>
+        <li>Hesabınızı ve tüm verilerinizi kalıcı olarak silme hakkı</li>
+        <li>Veri işlemeye itiraz hakkı</li>
+      </ul>
+      <div class="highlight">
+        <p>
+          🗑️ Hesabınızı silmek için: Uygulama → Profil → <strong>"Hesabı Sil"</strong> seçeneğini kullanabilirsiniz.
+          Tüm verileriniz anında ve kalıcı olarak silinir.
+        </p>
+      </div>
+      <p>Talepler için: <a href="mailto:support@turkiyepuzzle.app">support@turkiyepuzzle.app</a></p>
+    </section>
+
+    <!-- 9 -->
+    <section>
+      <div class="section-title"><span class="num">9</span>Politika Değişiklikleri</div>
+      <p>
+        Bu politika güncellendiğinde uygulama içinde bildirim yapılır.
+        Güncel sürüm her zaman bu sayfada yayınlanır.
+        Önemli değişikliklerde e-posta bildirimi gönderilebilir.
+      </p>
+    </section>
+
+    <!-- 10 -->
+    <section>
+      <div class="section-title"><span class="num">10</span>İletişim</div>
+      <p>Gizlilik ile ilgili her türlü soru ve talebiniz için:</p>
+      <p><a href="mailto:support@turkiyepuzzle.app">support@turkiyepuzzle.app</a></p>
+    </section>
+
+    <footer>
+      <p>© 2025 TR Puzzle · <a href="mailto:support@turkiyepuzzle.app">support@turkiyepuzzle.app</a></p>
+    </footer>
+  </div>
+</body>
+</html>
